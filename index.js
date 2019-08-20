@@ -1,36 +1,21 @@
 import {
-    createStore
-} from 'redux'
+    configureStore,
+    createReducer,
+    createAction
+} from 'redux-starter-kit'
 
-const INCREMENT = 'INCREMENT'
-const DECREMENT = 'DECREMENT'
+const increment = createAction('INCREMENT')
+const decrement = createAction('DECREMENT')
 
 
-function increment() {
-    return {
-        type: INCREMENT
-    }
-}
+const counter = createReducer(0, {
+    [increment]: state => state + 1,
+    [decrement]: state => state - 1
+})
 
-function decrement() {
-    return {
-        type: DECREMENT
-    }
-}
-
-function counter(state = 0, action) {
-    console.log(`previous state: ${state}`)
-    switch (action.type) {
-        case INCREMENT:
-            return state + 1
-        case DECREMENT:
-            return state - 1
-        default:
-            return state
-    }
-}
-
-const store = createStore(counter)
+const store = configureStore({
+    reducer: counter
+})
 
 document.getElementById('increment').addEventListener('click', () => {
     store.dispatch(increment())
