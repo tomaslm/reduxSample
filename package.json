@@ -1,0 +1,27 @@
+{
+    "name": "reduxsample",
+    "version": "1.0.0",
+    "description": "Redux sample",
+    "main": "index.html",
+    "scripts": {
+        "start": "parcel index.html --open",
+        "build": "parcel build index.html"
+    },
+    "dependencies": {
+        "redux": "^4.0.4",
+        "redux-starter-kit": "^0.6.3",
+        "@babel/core": "^7.2.0",
+        "parcel-bundler": "^1.6.1"
+    },
+    "devDependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tomaslm/reduxSample.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/tomaslm/reduxSample/issues"
+    },
+    "homepage": "https://github.com/tomaslm/reduxSample#readme"
+}
